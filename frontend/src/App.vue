@@ -1,24 +1,19 @@
 <template>
   <div id="app">
-    //<img alt="Vue logo" src="./assets/logo.png">
-    //<HelloWorld msg="Welcome to Your Vue.js App"/>
-    <LoginComponent/> <!-- This is where LoginComponent will appear -->
+    <LoginComponent />
   </div>
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'; // If using HelloWorld
-import LoginComponent from './components/LoginComponent.vue'; // Import LoginComponent
+import LoginComponent from './components/LoginComponent.vue';
 
 export default {
   name: 'App',
   components: {
-    //HelloWorld,       // Register HelloWorld if it's being used
-    LoginComponent    // Register LoginComponent
+    LoginComponent
   }
 };
 </script>
-
 
 <style>
 #app {

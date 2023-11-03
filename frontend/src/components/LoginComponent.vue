@@ -1,27 +1,29 @@
 <template>
-  <div class="flex w-full h-screen">
-    <!-- Left Side - Hero Image and Text -->
-    <div class="w-1/2 bg-gray-100 flex items-center justify-center" style="background-image: url('../assets/hero-image.jpg'); background-size: cover;">
-      <div>
-        <h1 class="text-4xl font-bold mb-4">Join the professional network you've been waiting for!</h1>
-        <p class="text-lg">Our mission is to empower professionals worldwide by connecting them with the people, resources, and opportunities needed to succeed in their careers!</p>
-      </div>
+  <div class="flex min-h-screen bg-gray-100">
+    <div class="flex-1 flex justify-center items-center bg-cover" style="background-image: url('D:\ProfolioConnect\frontend\src\assets\hero.png');">
+      <!-- You can add more images or text here -->
     </div>
-
-    <!-- Right Side - Sign Up Form -->
-    <div class="w-1/2 flex items-center justify-center">
-      <div class="w-full max-w-md">
-        <h2 class="text-3xl font-bold mb-6">SIGN UP</h2>
-        <div class="mb-4">
-          <label class="block text-sm font-medium mb-1">Create your profile!</label>
-          <input type="text" class="form-input w-full"/>
-        </div>
-        <div class="mb-6">
-          <button class="w-full py-2 px-4 bg-blue-500 text-white font-bold rounded hover:bg-blue-700">🎉 We’re holding peerlist.io/sankhaip10 for you!</button>
-        </div>
-        <div class="mb-6">
-          <button class="w-full py-2 px-4 bg-gray-300 hover:bg-gray-400 rounded">Continue with email</button>
-        </div>
+    <div class="flex-1 flex justify-center items-center">
+      <div class="w-full max-w-xs">
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+              Email
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Email">
+          </div>
+          <div class="mb-6">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+              Password
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************">
+          </div>
+          <div class="flex items-center justify-between">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+              Sign In
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -29,15 +31,11 @@
 
 <script>
 export default {
-  name: "LoginComponent"
+  name: 'LoginComponent',
+  // You can add your JavaScript here
 };
 </script>
 
 <style scoped>
-.form-input {
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 0.25rem;
-  width: 100%;
-}
+/* You can add additional styles here */
 </style>
