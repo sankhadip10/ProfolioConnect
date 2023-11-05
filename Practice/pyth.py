@@ -15,6 +15,8 @@ def apply_queries(diff, queries):
     for i, j, value in queries:
         update_diff_array(diff, i, j, value)
 
+
+
 def reconstruct_from_diff(diff):
     arr = [0] * (len(diff) - 1)
     arr[0] = diff[0]
