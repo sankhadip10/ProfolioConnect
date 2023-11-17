@@ -139,41 +139,64 @@
 # sum_of_all_submatrices(matrix)
 
 
-def find_row_with_max_ones(matrix):
-    n = len(matrix)      # Number of rows in the matrix
-    m = len(matrix[0])   # Number of columns in the matrix
-    row_index = -1       # To keep track of the row with maximum 1's
-    max_ones_count = 0   # To keep track of the maximum count of 1's
+# def find_row_with_max_ones(matrix):
+#     n = len(matrix)      # Number of rows in the matrix
+#     m = len(matrix[0])   # Number of columns in the matrix
+#     row_index = -1       # To keep track of the row with maximum 1's
+#     max_ones_count = 0   # To keep track of the maximum count of 1's
+#
+#     # Start from the top-right corner of the matrix
+#     row = 0
+#     col = m - 1
+#
+#     # Iterate over the matrix to find the row with the maximum number of 1's
+#     while row < n and col >= 0:
+#         # Move left if current element is 1
+#         if matrix[row][col] == 1:
+#             max_ones_count = col + 1  # Update the count of 1's in the current row
+#             row_index = row          # Update the row index with the current row
+#             col -= 1                 # Move left
+#         # Move down if current element is 0
+#         else:
+#             row += 1  # Move down to the next row
+#
+#     return row_index, max_ones_count
+#
+# # Example usage
+# matrix = [
+#     [0, 0, 0, 0, 1],
+#     [0, 0, 0, 1, 1],
+#     [0, 0, 1, 1, 1],
+#     [0, 1, 1, 1, 1],
+#     [1, 1, 1, 1, 1]  # This row has the maximum number of 1's
+# ]
+#
+# row_with_max_ones, max_ones = find_row_with_max_ones(matrix)
+# print(f"Row {row_with_max_ones} has the maximum number of 1's: {max_ones}")
+#
+#
+def find_frequencies(arr):
+    n = len(arr)
+    # Count the frequency
+    for i in range(n):
+        arr[arr[i] % n] += n
+        print("arr[i]%n",arr[i],"%" ,n)
+        print(arr)
 
-    # Start from the top-right corner of the matrix
-    row = 0
-    col = m - 1
+    # Calculate the frequency
+    frequency = [arr[i] // n for i in range(n)]
+    print("frequency",frequency)
 
-    # Iterate over the matrix to find the row with the maximum number of 1's
-    while row < n and col >= 0:
-        # Move left if current element is 1
-        if matrix[row][col] == 1:
-            max_ones_count = col + 1  # Update the count of 1's in the current row
-            row_index = row          # Update the row index with the current row
-            col -= 1                 # Move left
-        # Move down if current element is 0
-        else:
-            row += 1  # Move down to the next row
+    # Optional: Restore original array values
+    for i in range(n):
+        arr[i] %= n
 
-    return row_index, max_ones_count
-
-# Example usage
-matrix = [
-    [0, 0, 0, 0, 1],
-    [0, 0, 0, 1, 1],
-    [0, 0, 1, 1, 1],
-    [0, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1]  # This row has the maximum number of 1's
-]
-
-row_with_max_ones, max_ones = find_row_with_max_ones(matrix)
-print(f"Row {row_with_max_ones} has the maximum number of 1's: {max_ones}")
+    return frequency
 
 
+# Example Usage
+arr = [1, 2, 2, 0]
+print(arr)
+print(find_frequencies(arr))
 
 
