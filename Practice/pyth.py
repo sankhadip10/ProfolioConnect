@@ -194,6 +194,7 @@ def find_frequencies(arr):
     return frequency
 
 
+
 # Example Usage
 arr = [1, 2, 2, 0]
 print(arr)
