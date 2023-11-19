@@ -190,7 +190,6 @@ def find_frequencies(arr):
     # Optional: Restore original array values
     for i in range(n):
         arr[i] %= n
-
     return frequency
 
 
