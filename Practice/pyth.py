@@ -175,88 +175,13 @@
 # print(f"Row {row_with_max_ones} has the maximum number of 1's: {max_ones}")
 #
 #
-def find_frequencies(arr):
-    n = len(arr)
-    # Count the frequency
-    for i in range(n):
-        arr[arr[i] % n] += n
-        print("arr[i]%n",arr[i],"%" ,n)
-        print(arr)
+#
+def gcd(nos1,nos2):
+    gcd =1
+    for i in range(1,min(nos1,nos2)+1):
+        if nos1 % i ==0 and nos2 % i == 0:
+            gcd = i
+        if 
+    return gcd
 
-    # Calculate the frequency
-    frequency = [arr[i] // n for i in range(n)]
-    print("frequency",frequency)
-
-    # Optional: Restore original array values
-    for i in range(n):
-        arr[i] %= n
-    return frequency
-
-
-
-# Example Usage
-arr = [1, 2, 2, 0]
-print(arr)
-print(find_frequencies(arr))
-
-
-class Solution:
-    def garbageCollection(self, garbage: List[str], travel: List[int]) -> int:
-        total_minutes = 0  # Total minutes needed for garbage collection
-        current_travel_time = 0  # Current travel time
-
-        # Add the initial minutes required to collect garbage at the first house
-        total_minutes += len(garbage[0])
-
-        last_garbage_indices = [-1, -1, -1]  # Keep track of the last occurrence of each type of garbage
-
-        # Iterate through each house starting from the second house
-        for house_index in range(1, len(garbage)):
-            # Add the minutes required to collect garbage at the current house
-            total_minutes += len(garbage[house_index])
-
-            # Update the indices of the last occurrence of each type of garbage
-            if "M" in garbage[house_index]:
-                last_garbage_indices[0] = house_index - 1
-            if "P" in garbage[house_index]:
-                last_garbage_indices[1] = house_index - 1
-            if "G" in garbage[house_index]:
-                last_garbage_indices[2] = house_index - 1
-
-        # Iterate through each travel segment
-        for travel_index in range(len(travel)):
-            # Add the current travel time
-            current_travel_time += travel[travel_index]
-
-            # Add the minutes required to collect garbage if a garbage truck is at the corresponding house
-            for truck_index in range(3):
-                if last_garbage_indices[truck_index] == travel_index:
-                    total_minutes += current_travel_time
-
-        return total_minutes
-
-    class Solution:
-        def countNicePairs(self, nums: List[int]) -> int:
-            mod = 1000000007
-            length = len(nums)
-            for i in range(length):
-                nums[i] = nums[i] - self.reverse(nums[i])
-            nums.sort()
-            res = 0
-            i = 0
-            while i < length - 1:
-                count = 1
-                while i < length - 1 and nums[i] == nums[i + 1]:
-                    count += 1
-                    i += 1
-                res = (res % mod + (count * (count - 1)) // 2) % mod
-                i += 1
-
-            return int(res % mod)
-
-        def reverse(self, num: int) -> int:
-            rev = 0
-            while num > 0:
-                rev = rev * 10 + num % 10
-                num //= 10
-            return rev
+print(gcd(100,80))
